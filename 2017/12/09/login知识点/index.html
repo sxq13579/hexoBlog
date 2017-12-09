@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SandPgirl</title>
+  <title>login知识点 | SandPgirl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="A blog created by github and hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SandPgirl">
-<meta property="og:url" content="http://shenxq.com/index.html">
+  <meta name="description" content="1、登录（1）最初版本 接口：access–/account/login 数据：123456789data = &amp;#123;    deviceno: getDeviceno,    devicetype: 3,    accounttype: 2,    account: name,    pwd: $.md5(pwd),    isforce: 1&amp;#125;&amp;lt;!-- more --&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="login知识点">
+<meta property="og:url" content="http://shenxq.com/2017/12/09/login知识点/index.html">
 <meta property="og:site_name" content="SandPgirl">
-<meta property="og:description" content="A blog created by github and hexo">
+<meta property="og:description" content="1、登录（1）最初版本 接口：access–/account/login 数据：123456789data = &amp;#123;    deviceno: getDeviceno,    devicetype: 3,    accounttype: 2,    account: name,    pwd: $.md5(pwd),    isforce: 1&amp;#125;&amp;lt;!-- more --&amp;g">
 <meta property="og:locale" content="English and Chinese">
+<meta property="og:updated_time" content="2017-12-09T15:16:29.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SandPgirl">
-<meta name="twitter:description" content="A blog created by github and hexo">
+<meta name="twitter:title" content="login知识点">
+<meta name="twitter:description" content="1、登录（1）最初版本 接口：access–/account/login 数据：123456789data = &amp;#123;    deviceno: getDeviceno,    devicetype: 3,    accounttype: 2,    account: name,    pwd: $.md5(pwd),    isforce: 1&amp;#125;&amp;lt;!-- more --&amp;g">
   
     <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
   
@@ -47,11 +48,13 @@
   <link rel="stylesheet" href="/css/bootstrap.css" >
 
   
-    <link rel="stylesheet" href="/css/home.css" >
+    <link rel="stylesheet" href="/css/dialog.css">
   
 
   
 
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
   
 
   
@@ -64,222 +67,107 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
-  
-    <header id="header">
-
-	<!-- 背景图模式 -->
-	
-
-    
-      <div id="intrologo" class="intro-logo" style="background-position:center; background-repeat:no-repeat; background-image: url(); background-size: auto 100%;">
-
-      <!-- Support rolling -->  
-        
-        <section class="awSlider">
-          <div class="carousel slide carousel-fade " data-ride="carousel">
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-               
-                  
-                    <div class="item active">
-                  
-                    <img id="carousel-img0" src="/css/images/home-bg.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img0 = new Image();
-                      var imageTag0 = document.getElementById("carousel-img0");
-                      img0.src = imageTag0.src;
-                      img0.onload=function(){
-                        if (img0.width / img0.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag0.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag0.style.height = document.body.clientHeight + "px";
-                          imageTag0.style.marginLeft = -(document.body.clientHeight * img0.width / img0.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img1" src="/css/images/sample.jpg">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img1 = new Image();
-                      var imageTag1 = document.getElementById("carousel-img1");
-                      img1.src = imageTag1.src;
-                      img1.onload=function(){
-                        if (img1.width / img1.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag1.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag1.style.height = document.body.clientHeight + "px";
-                          imageTag1.style.marginLeft = -(document.body.clientHeight * img1.width / img1.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-                  
-                    <div class="item">
-                  
-                    <img id="carousel-img2" src="https://source.unsplash.com/collection/954550/1920x1080">
-                  </div>
-
-                  <!-- 自适应大图 -->
-                  <script>
-                      var img2 = new Image();
-                      var imageTag2 = document.getElementById("carousel-img2");
-                      img2.src = imageTag2.src;
-                      img2.onload=function(){
-                        if (img2.width / img2.height <= document.body.clientWidth / document.body.clientHeight) {
-                          imageTag2.style.width = document.body.clientWidth + "px";
-                        } else {
-                          imageTag2.style.height = document.body.clientHeight + "px";
-                          imageTag2.style.marginLeft = -(document.body.clientHeight * img2.width / img2.height - document.body.clientWidth) / 2 + "px";
-                        }
-                      };
-                  </script>
-                
-            </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Geri</span>
-            </a>
-            <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">İleri</span>
-            </a>
-          </div>
-        </section>
-        <script>
-          $('section.awSlider .carousel').carousel({
-              pause: '',
-              interval: 5000
-          });
-          var startImage = $('section.awSlider .item.active > img').attr('src');
-          $('section.awSlider .carousel').on('slid.bs.carousel', function () {
-              var bscn = $(this).find('.item.active > img').attr('src');
-              $('section.awSlider > img').attr('src', bscn);
-          });
-        </script>
-      
-
-    
- 
-
-
-    <canvas width="100%" height="100%"></canvas>
-    <script>
-      var c = document.getElementsByTagName('canvas')[0],
-          x = c.getContext('2d'),
-          w = window.innerWidth,
-          h = window.innerHeight,
-          pr = window.devicePixelRatio || 1,
-          f = 90,
-          q,
-          m = Math,
-          r = 0,
-          u = m.PI*2,
-          v = m.cos,
-          z = m.random
-      c.width = w*pr
-      c.height = h*pr
-      x.scale(pr, pr)
-      x.globalAlpha = 0.6
-
-      <!-- 折线Polyline背景 -->
-      
-		 function redraw(){
-		 	var pattern = Trianglify({
-				width: window.innerWidth,
-				height: window.innerHeight
-			});
-            pattern.canvas(c)
-        }
-        document.getElementById("intrologo").onclick = redraw
-        document.getElementById("intrologo").ontouchstart = redraw
-		redraw()
-      
-    </script>
-    
-
-    
-      <div id="homelogo" class="homelogo" style="background: rgba(255,255,255,1);"> 
-    
-
-        
-          <div class="homelogoback"  style="border: 1px solid #404040;" >
-            <h1><a href="#content" id="logo">SandPgirl</a></h1>
-            <h3>A blog created by github and hexo</h3>
-            <h5>Shen xiaoqing</h5>
-            <!-- <p><a href="https://github.com/iTimeTraveler" target="_blank">Github</a></p> -->
-          </div>
-        
-    
-    </div>
-  </div>
-
-  <!-- 自适应主页背景大图 -->
-  
-
- <!-- home_logo_image居中 -->
- 
-    <script>
-        var homelogodiv = document.getElementById("homelogo");
-        if (document.all.homelogo.offsetWidth > document.body.clientWidth) {
-          homelogodiv.style.width = document.body.clientWidth + "px";
-          homelogodiv.style.marginLeft = document.body.clientWidth * -0.5 + "px";
-        } else {
-          homelogodiv.style.width = homelogodiv.clientWidth  + "px";
-          homelogodiv.style.marginLeft = (homelogodiv.clientWidth)  * -0.5 + "px";
-        }
-    </script>
-  
-
-  <div class="intro-navigate">
-      <p class="navigater-list">
-        
-          <a id="beautifont" class="main-nav-link" href="/">Startseite</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/archives">Archive</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/categories">Kategorien</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/tags">Tags</a>
-        
-          <a id="beautifont" class="main-nav-link" href="/about">About</a>
-        
-      </p>
-  </div>
-
-</header>
   
   <div id="container">
     <div id="wrap">
       
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Startseite</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archive</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Kategorien</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Schreib etwas..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Beiträge',
+            PAGES: 'Seiten',
+            CATEGORIES: 'Kategorien',
+            TAGS: 'Tags',
+            UNTITLED: '(Unbenannt)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-    <article id="post-login知识点"  class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-login知识点" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
       <header class="article-header">
         
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/12/09/login知识点/">login知识点</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      login知识点
     </h1>
   
 
@@ -293,6 +181,12 @@
 
       
       
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
     </div>
     <div class="article-entry" itemprop="articleBody">
       
@@ -444,299 +338,76 @@
     </div>
     <footer class="article-footer">
       
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="good-Git常用知识点"  class="article article-type-good" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/12/05/Git常用知识点/">Git常用知识点</a>
-    </h1>
-  
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/12/05/Git常用知识点/" class="article-date">
-	  <time datetime="2017-12-05T00:54:24.000Z" itemprop="datePublished">2017-12-05</time>
-	</a>
+		       if (typeof LivereTower === 'function') { return; }
 
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h4><ul>
-<li>git init  在现有目录中初始化仓库</li>
-<li>git clone 默认配置下远程Git仓库中的每一个文件的每一个版本都将被拉取下来</li>
-<li>git status    查看文件处于什么状态
-        <!-- git基本命令
-git init  在现有目录中初始化仓库
-git clone 默认配置下远程Git仓库中的每一个文件的每一个版本都将被拉取下来
-git status    查看文件处于什么状态
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
 
-git status -S/--short
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
 
 
-git add   开始跟踪一个文件或者暂存某次更新的文件
-cat .gitignore
-文件 .gitignore 的格式规范如下：
 
-所有空行或......  -->
-        <p class="article-more-link">
-          <a href="/2017/12/05/Git常用知识点/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
       
       
     </footer>
   </div>
   
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-代码总结0819"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
     
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/12/04/代码总结0819/">20170703—20170819代码总结</a>
-    </h1>
   
+    <a href="/2017/12/05/Git常用知识点/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Git常用知识点</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/12/04/代码总结0819/" class="article-date">
-	  <time datetime="2017-12-04T11:13:24.000Z" itemprop="datePublished">2017-12-04</time>
-	</a>
-
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="7月所有功能代码"><a href="#7月所有功能代码" class="headerlink" title="7月所有功能代码"></a>7月所有功能代码</h3><ol>
-<li>financing（添加自选基金）</li>
-<li>雪亮工程监控代码</li>
-<li>遥控器（录音功能）</li>
-<li>所有登录功能
-        <!-- 7月所有功能代码
-financing（添加自选基金）
-雪亮工程监控代码
-遥控器（录音功能）
-所有登录功能
-8月所有功能代码大禹&amp;静姐：
-幼儿园监控视频
-直播视频会议代码兰兰
-空气质量（完）
-附近医院（静）
-药品条码（静）
-黄金价格（完）
-身份查询（完）
-
-
-==7月份代码分析==
-financing代码分析：
-
-
-不同的手机系统在css中默认的left是不一样的，有的是’0px’，有......  -->
-        <p class="article-more-link">
-          <a href="/2017/12/04/代码总结0819/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
 
 <!-- Table of Contents -->
 
-  
-    <article id="w-远走高飞"  class="article article-type-w" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Inhalt</strong>
     
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、登录"><span class="nav-number">1.</span> <span class="nav-text">1、登录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）最初版本"><span class="nav-number">1.0.1.</span> <span class="nav-text">（1）最初版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-第二版本"><span class="nav-number">1.0.2.</span> <span class="nav-text">(2)第二版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-验证码登录（新设备须进行验证码验证登录）"><span class="nav-number">1.0.3.</span> <span class="nav-text">(3)验证码登录（新设备须进行验证码验证登录）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#流程："><span class="nav-number">1.0.3.1.</span> <span class="nav-text">流程：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#验证图片验证码并获取手机验证码"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">验证图片验证码并获取手机验证码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#验证手机验证码"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">验证手机验证码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#登录"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">登录</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-扫码登录"><span class="nav-number">1.0.4.</span> <span class="nav-text">(4)扫码登录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-微信授权登录"><span class="nav-number">1.0.5.</span> <span class="nav-text">(5)微信授权登录</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#关于网页授权access-token和普通access-token的区别"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">关于网页授权access_token和普通access_token的区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">2.</span> <span class="nav-text">注册</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户名密码"><span class="nav-number">2.0.1.</span> <span class="nav-text">用户名密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户名密码-验证码"><span class="nav-number">2.0.2.</span> <span class="nav-text">用户名密码/验证码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户名密码-验证码-1"><span class="nav-number">2.0.3.</span> <span class="nav-text">用户名密码+验证码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户名密码-验证码第二版"><span class="nav-number">2.0.4.</span> <span class="nav-text">用户名密码+验证码第二版</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改密码"><span class="nav-number">3.</span> <span class="nav-text">修改密码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#只需短信验证码"><span class="nav-number">3.0.1.</span> <span class="nav-text">只需短信验证码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图片-短信验证码"><span class="nav-number">3.0.2.</span> <span class="nav-text">图片+短信验证码</span></a></li></ol></li></ol></li></ol>
     
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/09/04/远走高飞/">远走高飞</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/09/04/远走高飞/" class="article-date">
-	  <time datetime="2017-09-04T01:56:39.000Z" itemprop="datePublished">2017-09-04</time>
-	</a>
-
-      
-      
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="远走高飞"><a href="#远走高飞" class="headerlink" title="远走高飞"></a>远走高飞</h1><p>爱你错了吗<br>为什么会受到这么多惩罚<br>他们说的话<br>像针往心里扎<br>我心中的怕<br>
-        <!-- 远走高飞爱你错了吗为什么会受到这么多惩罚他们说的话像针往心里扎我心中的怕不知该怎么做才可以放下只不过想好好的爱一次啊带我远走高飞不去理会这一个蜚短流长的世界布满虚伪是你让我选择长醉繁星守候月不能睡只因为爱上了夜的黑带我远走高飞一起去追有一个叫作幸福的世界没有泪水我已经感觉到疲累只想在你怀抱入睡不在乎别人眼中是非重新再出发能不能让这天地不再嘈杂我的心里面安静得不像话故事的真假没有多余的力气去分......  -->
-        <p class="article-more-link">
-          <a href="/2017/09/04/远走高飞/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-first-day-of-hexo"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/08/25/first-day-of-hexo/">first day of hexo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/08/25/first-day-of-hexo/" class="article-date">
-	  <time datetime="2017-08-25T11:02:54.000Z" itemprop="datePublished">2017-08-25</time>
-	</a>
-
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="2017已读书籍"><a href="#2017已读书籍" class="headerlink" title="2017已读书籍"></a>2017已读书籍</h1><ul>
-<li>白夜行</li>
-<li>摆渡人</li>
-<li>上海堡垒</li>
-<li>我有故事，你有酒吗？
-        <!-- 2017已读书籍
-白夜行
-摆渡人
-上海堡垒
-我有故事，你有酒吗？
-品质德国
-谁动了我的奶酪
-你今天真好看
-你一生的8760小时    努尔艾力·阿不利孜（新疆乌鲁木齐）
-岛上书店    加布瑞埃拉·泽文（美）
-安达卢西亚的夏天 杰基.托德
-眠    村上春树
-
-...  -->
-        <p class="article-more-link">
-          <a href="/2017/08/25/first-day-of-hexo/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-hello-world"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/08/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/08/25/hello-world/" class="article-date">
-	  <time datetime="2017-08-25T10:59:48.502Z" itemprop="datePublished">2017-08-25</time>
-	</a>
-
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info.<br>
-        <!-- Welcome to Hexo! This is your very first post. Check documentation for more info.If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qui......  -->
-        <p class="article-more-link">
-          <a href="/2017/08/25/hello-world/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-
-
+  </aside>
 </section>
         
       </div>
-      
-        <div align="center" style="margin-top: 30px;"><hr class="hr" style="margin:0px; height:3px;"></div>
       
       <footer id="footer">
   
@@ -828,9 +499,9 @@ Qui......  -->
 <script src="/js/scripts.js"></script>
 
 
-  <script src="/js/home.js"></script>
 
 
+  <script src="/js/dialog.js"></script>
 
 
 
@@ -915,6 +586,8 @@ Qui......  -->
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
