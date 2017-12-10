@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html5 video | SandPgirl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="浏览器video和微信video属性方法大比拼：1、属性 浏览器video（以前）：   src ：视频的属性 poster：视频封面，没有播放时显示的图片 preload：预加载 autoplay：自动播放 loop：循环播放 controls：浏览器自带的控制条 width：视频宽度 height：视频高度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5 video">
+<meta property="og:url" content="http://shenxq.com/2017/12/10/html5-video/index.html">
+<meta property="og:site_name" content="SandPgirl">
+<meta property="og:description" content="浏览器video和微信video属性方法大比拼：1、属性 浏览器video（以前）：   src ：视频的属性 poster：视频封面，没有播放时显示的图片 preload：预加载 autoplay：自动播放 loop：循环播放 controls：浏览器自带的控制条 width：视频宽度 height：视频高度">
+<meta property="og:locale" content="English and Chinese">
+<meta property="og:updated_time" content="2017-12-10T08:56:39.934Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5 video">
+<meta name="twitter:description" content="浏览器video和微信video属性方法大比拼：1、属性 浏览器video（以前）：   src ：视频的属性 poster：视频封面，没有播放时显示的图片 preload：预加载 autoplay：自动播放 loop：循环播放 controls：浏览器自带的控制条 width：视频宽度 height：视频高度">
+  
+    <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Startseite</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archive</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Kategorien</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Schreib etwas..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Beiträge',
+            PAGES: 'Seiten',
+            CATEGORIES: 'Kategorien',
+            TAGS: 'Tags',
+            UNTITLED: '(Unbenannt)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-html5-video" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      html5 video
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/12/10/html5-video/" class="article-date">
+	  <time datetime="2017-12-10T08:56:16.000Z" itemprop="datePublished">2017-12-10</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="浏览器video和微信video属性方法大比拼："><a href="#浏览器video和微信video属性方法大比拼：" class="headerlink" title="浏览器video和微信video属性方法大比拼："></a>浏览器video和微信video属性方法大比拼：</h3><h5 id="1、属性"><a href="#1、属性" class="headerlink" title="1、属性"></a>1、属性</h5><blockquote>
+<p>浏览器video（以前）：</p>
+</blockquote>
+<ul>
+<li>src ：视频的属性</li>
+<li>poster：视频封面，没有播放时显示的图片</li>
+<li>preload：预加载</li>
+<li>autoplay：自动播放</li>
+<li>loop：循环播放</li>
+<li>controls：浏览器自带的控制条</li>
+<li>width：视频宽度</li>
+<li>height：视频高度<a id="more"></a>
+<blockquote>
+<p>微信浏览器video（现在，全屏播放）：</p>
+</blockquote>
+</li>
+<li>src=”video.mp4”</li>
+<li>poster=”loadbg.jpg”　视频封面</li>
+<li>preload=”auto”</li>
+<li>x-webkit-airplay=”allow”</li>
+<li>x5-video-player-type=”h5”　启用H5播放器,是wechat安卓版特性</li>
+<li>x5-video-player-fullscreen=”true”　全屏设置，设置为 true 是防止横屏</li>
+<li>x5-video-orientation=”portraint”播放器方向，landscape横屏，portraint竖屏，默认值为竖屏</li>
+<li>webkit-playsinline=”true”　这个属性是iOS 10中设置可以让视频在小窗内播放，也就是不是全屏播放</li>
+<li>playsinline=”true”　ios微信浏览器支持小窗内播放</li>
+<li>x-webkit-airplay=”true”</li>
+<li>x5-video-ignore-metadata=”true”<blockquote>
+<p>video属性解释：</p>
+</blockquote>
+</li>
+<li>preload=”auto” ：属性规定在页面加载后载入视频。如果设置了 autoplay 属性，则忽略该属性。</li>
+<li>一般参数可能的值：</li>
+<li>auto - 当页面加载后载入整个视频</li>
+<li>meta - 当页面加载后只载入元数据</li>
+<li>none - 当页面加载后不载入视频</li>
+<li>muted：当设置该属性后，它规定视频的音频输出应该被静音 </li>
+<li>controls=”controls” ：属性规定浏览器应该为视频提供播放控件。</li>
+<li>autoplay=”autoplay”： 视频自动播放设置，但是有经验的人都应该知道，autoplay标签在手机上不兼容，APP中设置问题导致无法自动播放，无论安卓或IOS。需要模拟自动播放只能通过一些事件触发。</li>
+<li>poster=”images/1.jpg”:属性规定视频下载时显示的图像，或者在用户点击播放按钮前显示的图像。如果未设置该属性，则使用视频的第一帧来代替。</li>
+<li>preload=”auto” ：属性规定在页面加载后载入视频。</li>
+<li>x-webkit-airplay=”allow”暂时无法确切的知道其作用，猜测，这个属性应该是使此视频支持ios的AirPlay功能。使用AirPlay可以直接从使用iOS的设备上的不同位置播放视频、音乐还有照片文件，也就是说通过AirPlay功能可以实现影音文件的无线播放，当然前提是播放的终端设备也要支持相应的功能。</li>
+<li>webkit-playsinline=”true”和playsinline：：视频播放时局域播放，不脱离文档流 。但是这个属性比较特别， 需要嵌入网页的APP比如WeChat中UIwebview 的allowsInlineMediaPlayback = YES webview.allowsInlineMediaPlayback = YES，才能生效。换句话说，如果APP不设置，你页面中加了这标签也无效，这也就是为什么安卓手机WeChat 播放视频总是全屏，因为APP不支持playsinline，而ISO的WeChat却支持。<br><br>这里就要补充下，如果是想做全屏直播或者全屏H5体验的用户，ISO需要设置删除 webkit-playsinline 标签，因为你设置 false 是不支持的，安卓则不需要，因为默认全屏。但这时候全屏是有播放控件的，无论你有没有设置control。<br> 做直播的可能用得着播放控件，但是全屏H5是不需要的，那么去除全屏播放时候的控件，需要以下设置：同层播放。</li>
+<li>x5-video-player-type=”h5”：启用同层H5播放器，就是在视频全屏的时候，div可以呈现在视频层上，也是WeChat安卓版特有的属性。同层播放别名也叫做沉浸式播放，播放的时候看似全屏，但是已经除去了control和微信的导航栏，只留下”X”和”&lt;”两键。目前的同层播放器只在Android（包括微信）上生效，暂时不支持iOS。笔者想过为什么同层播放只对安卓开放，因为安卓不能像ISO一样局域播放，默认的全屏会使得一些界面操作被阻拦，如果是全屏H5还好，但是做直播的话，诸如弹幕那样的功能就无法实现了，所以这时候同层播放的概念就解决了这个问题。不过笔者在测试的过程中发现，不同版本的ISO和安卓效果略有不同。</li>
+<li>x5-video-orientation：声明播放器支持的方向，可选值landscape 横屏,portraint竖屏。默认值portraint。无论是直播还是全屏H5一般都是竖屏播放，但是这个属性需要x5-video-player-type开启H5模式</li>
+<li>x5-video-player-fullscreen=”true”：全屏设置。true支持全屏播放，false不支持全屏播放。</li>
+</ul>
+<blockquote>
+<p>其实，IOS 微信浏览器是Chrome的内核，相关的属性都支持，也是为什么X5同层播放不支持的原因。安卓微信浏览器是X5内核，一些属性标签比如playsinline就不支持，所以始终全屏。<br><br>还有个问题，在Android的微信里面，就算加上了上面的属性，还会出现上下有黑边，不能全屏的问题。解决办法：给video加上object-fit:fill;的style属性。如果还是有黑边有可能是视频尺寸不合适。</p>
+</blockquote>
+<p>2、横竖屏<br>普通浏览器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">var hengshuping = function() &#123;</div><div class="line">    var $play = $(&apos;#play&apos;);</div><div class="line">    if (window.orientation == 180 || window.orientation == 0) &#123;</div><div class="line">        //竖屏状态！</div><div class="line">        $play.addClass(&apos;ui-play&apos;);  //小窗口播放class</div><div class="line">        $play.removeClass(&apos;fullscreen&apos;);  //全屏播放class</div><div class="line">        $(&apos;.fullscreen&apos;).css(&apos;top&apos;, 0);</div><div class="line">    &#125;</div><div class="line">    if (window.orientation == 90 || window.orientation == -90) &#123;</div><div class="line">        // 横屏状态</div><div class="line">        $play.removeClass(&apos;ui-play&apos;);</div><div class="line">        $play.addClass(&apos;fullscreen&apos;);</div><div class="line">        var hd = $(&apos;.header&apos;).innerHeight();</div><div class="line">        $(&apos;.fullscreen&apos;).css(&apos;top&apos;, hd);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"> window.addEventListener(&quot;onorientationchange&quot; in window ? &quot;orientationchange&quot; : &quot;resize&quot;, hengshuping, false);</div><div class="line">  微信video：</div><div class="line"> // 横屏竖屏控制（安卓手机，IOS可以自动调整横竖屏）</div><div class="line">var changeOrientation = function() &#123;</div><div class="line">    $(&apos;.screen&apos;).on(&apos;touchstart&apos;, function() &#123;</div><div class="line">        if ($(this).hasClass(&apos;small&apos;)) &#123;</div><div class="line">            $(this).removeClass(&apos;small&apos;).addClass(&apos;full&apos;).text(&apos;圲&apos;);</div><div class="line">            $(&apos;#video&apos;).attr(&apos;x5-video-orientation&apos;, &apos;landscape&apos;);</div><div class="line">        &#125; else &#123;</div><div class="line">            $(this).removeClass(&apos;full&apos;).addClass(&apos;small&apos;).text(&apos;愤&apos;);</div><div class="line">            $(&apos;#video&apos;).attr(&apos;x5-video-orientation&apos;, &apos;portraint&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>3、全屏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">// 模拟按钮全屏</div><div class="line">var fullMZ = function() &#123;</div><div class="line">    var navigatorInfo = navigator.userAgent,</div><div class="line">        $video = document.getElementById(&quot;video&quot;);</div><div class="line">    if (/(Android)/i.test(navigator.userAgent)) &#123;</div><div class="line">        $(&apos;.full-screen&apos;).show();</div><div class="line">        $(&apos;#fullScreen&apos;).on(&apos;click&apos;, function() &#123;</div><div class="line">            if (fullscreenElement() == null) &#123;    //判断是否全屏，如果为null则不是全屏</div><div class="line">                launchFullScreen($video);   //设为全屏</div><div class="line">            &#125; else &#123;</div><div class="line">                exitFullscreen();       //退出全屏</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"> // 元素是否全屏</div><div class="line">var fullscreenElement = function() &#123;</div><div class="line">    return document.fullscreenElement ||document.msFullscreenElement ||document.mozFullScreenElement ||document.webkitFullscreenElement || null;</div><div class="line">&#125;;</div><div class="line">// 找到适合浏览器的全屏方法</div><div class="line">var launchFullScreen = function(element) &#123;</div><div class="line">    if (element.requestFullScreen) &#123;</div><div class="line">        element.requestFullScreen();</div><div class="line">    &#125; else if (element.mozRequestFullScreen) &#123; //兼容moz</div><div class="line">        element.mozRequestFullScreen();</div><div class="line">    &#125; else if (element.webkitRequestFullScreen) &#123; //兼容webkit</div><div class="line">        element.webkitRequestFullScreen();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">//退出全屏</div><div class="line">var exitFullscreen = function() &#123;</div><div class="line">    if (document.exitFullscreen) &#123;</div><div class="line">        document.exitFullscreen();</div><div class="line">    &#125; else if (document.mozCancelFullScreen) &#123; //兼容moz</div><div class="line">        document.mozCancelFullScreen();</div><div class="line">    &#125; else if (document.webkitExitFullscreen) &#123; //兼容webkit</div><div class="line">        document.webkitExitFullscreen();</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>4、==小窗口播放：==</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webkit-playsinline=&quot;true&quot; </div><div class="line"> x5-playsinline=&quot;true&quot; </div><div class="line"> x-webkit-airplay=&quot;true&quot; </div><div class="line"> preload=&quot;auto&quot; </div><div class="line"> playsinline</div></pre></td></tr></table></figure>
+<p>参考：</p>
+<ol>
+<li><a href="http://www.jianshu.com/p/404d01b8e713/" target="_blank" rel="external">http://www.jianshu.com/p/404d01b8e713/</a></li>
+<li><a href="https://www.zhihu.com/question/36423771/answer/227144257" target="_blank" rel="external">https://www.zhihu.com/question/36423771/answer/227144257</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/10/cms/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">cms</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Inhalt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器video和微信video属性方法大比拼："><span class="nav-number">1.</span> <span class="nav-text">浏览器video和微信video属性方法大比拼：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、属性"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、属性</span></a></li></ol></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 SandPgirl All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            SandPgirl
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 Shen xiaoqing All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
