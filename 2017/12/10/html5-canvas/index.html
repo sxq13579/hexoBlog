@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html5 canvas | SandPgirl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5 canvas">
+<meta property="og:url" content="http://shenxq.com/2017/12/10/html5-canvas/index.html">
+<meta property="og:site_name" content="SandPgirl">
+<meta property="og:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+<meta property="og:locale" content="English and Chinese">
+<meta property="og:updated_time" content="2017-12-10T09:03:34.041Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5 canvas">
+<meta name="twitter:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+  
+    <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Startseite</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archive</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Kategorien</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Schreib etwas..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Beiträge',
+            PAGES: 'Seiten',
+            CATEGORIES: 'Kategorien',
+            TAGS: 'Tags',
+            UNTITLED: '(Unbenannt)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-html5-canvas" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      html5 canvas
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/12/10/html5-canvas/" class="article-date">
+	  <time datetime="2017-12-10T09:02:55.000Z" itemprop="datePublished">2017-12-10</time>
+	</a>
+
+      
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="湖北微信遥控器："><a href="#湖北微信遥控器：" class="headerlink" title="湖北微信遥控器："></a>湖北微信遥控器：</h5><h6 id="1、问题一："><a href="#1、问题一：" class="headerlink" title="1、问题一："></a>1、问题一：</h6><blockquote>
+<p>canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；<br>另外，在遥控器绘图过程中线条粗细也会随之变化；</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>具体解释：<br><a href="http://www.cnblogs.com/wmhuang/p/6477223.html" target="_blank" rel="external">http://www.cnblogs.com/wmhuang/p/6477223.html</a><br></p>
+</blockquote>
+<p>解决方法：<br><br>（1）写js时，根据dpr动态设置canvas的宽高，并改变内部图形的大小倍数；<br><br>（2）直接将canvas的狂傲设置为style中宽高的dpr倍，将内部图形也设置成相应倍数。<br></p>
+<h6 id="2、问题二："><a href="#2、问题二：" class="headerlink" title="2、问题二："></a>2、问题二：</h6><blockquote>
+<p>在vue编写遥控器页面绘图时，由于我首先显示的是按键页面，导致页面显示canvas绘图时，canvas不能正常显示个刷新；</p>
+<p>原因：<br>刚开始canvas不显示从而不能初始化canvas属性</p>
+<p>解决方法：<br>刚开始先使canvas显示，当初始化数据之后，再调整页面显示情况</p>
+</blockquote>
+<h6 id="3、canvas知识点："><a href="#3、canvas知识点：" class="headerlink" title="3、canvas知识点："></a>3、canvas知识点：</h6><blockquote>
+<p>canvas.save()把当前状态的一份拷贝压入到一个保存图像状态的栈中，允许临时地改变图像状态，然后通过调用restore()来恢复以前的值。</p>
+<p>canvas.restore()方法从栈中弹出存储的图形状态并回复CanvasRenderingContext2D对象的额属性、剪切路径和变换矩阵的值。</p>
+</blockquote>
+<ul>
+<li>这里canvas.save();和canvas.restore();是两个相互匹配出现的，作用是用来保存画布的状态和取出保存的状态的。</li>
+<li>我们在操作之前调用canvas.save()来保存画布当前的状态，当操作之后取出之前保存过的状态，这样就不会对其他的元素进行影响<br></li>
+</ul>
+<p>代码段1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.save();   </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.restore();   </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>代码段2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面这两个代码片段中我们都假设有两张图片bmp1和bmp2，并且都画在画布上!<br><br>那么代码段1和代码段2的不同:!<br></p>
+<ol>
+<li>代码段1中我们进行画布缩放的之前保存了画布状态，做了缩放操作之后又取出之前保存的状态，这样做是为了保证bmp2正常画出来不受到缩放的影响！</li>
+<li>代码段2里，画了bmp1后就执行了缩放操作，并且没有保存状态！紧接着画了bmp2，那么bmp2也会一样受到缩放的影响！！<br>所以我们如果单独处理一张图片的时候，而且不想影响其他部分的绘制，那么应该如下来做：!<br></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">    Canvas canvas = sfh.lockCanvas();    </div><div class="line">    canvas.drawColor(Color.BLACK);  </div><div class="line">    canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">    canvas.save();   </div><div class="line">    canvas.scale(5f, 5f);  </div><div class="line">    canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">    canvas.restore();   </div><div class="line">    sfh.unlockCanvasAndPost(canvas);    </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+<script src="/js/vdonate.js"></script>
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/10/html5-video/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">html5 video</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Inhalt</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#湖北微信遥控器："><span class="nav-number">1.</span> <span class="nav-text">湖北微信遥控器：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、问题一："><span class="nav-number">1.1.</span> <span class="nav-text">1、问题一：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、问题二："><span class="nav-number">1.2.</span> <span class="nav-text">2、问题二：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、canvas知识点："><span class="nav-number">1.3.</span> <span class="nav-text">3、canvas知识点：</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2017 - 2017 SandPgirl All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            SandPgirl
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 Shen xiaoqing All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
