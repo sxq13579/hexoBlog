@@ -271,6 +271,56 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Bmap"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/12/10/Bmap/">Bmap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/12/10/Bmap/" class="article-date">
+	  <time datetime="2017-12-10T06:44:41.000Z" itemprop="datePublished">2017-12-10</time>
+	</a>
+
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="提供的转换类"><a href="#提供的转换类" class="headerlink" title="提供的转换类"></a>提供的转换类</h3><ul>
+<li>Geocoder：逆/地址解析，用于坐标与地址间的相互转换。详情见类参考<h5 id="地址解析服务"><a href="#地址解析服务" class="headerlink" title="地址解析服务"></a>地址解析服务</h5><blockquote>
+<p>根据地址描述获得坐标信息。<br><br>百度地图API提供Geocoder类进行地址解析，您可以通过Geocoder.getPoint()方法来将一段地址描述转换为一个坐标。<br></p>
+        <!-- 提供的转换类
+Geocoder：逆/地址解析，用于坐标与地址间的相互转换。详情见类参考地址解析服务
+根据地址描述获得坐标信息。百度地图API提供Geocoder类进行地址解析，您可以通过Geocoder.getPoint()方法来将一段地址描述转换为一个坐标。
+
+如下示例，我们将地址“北京市海淀区上地10街10号”转换获取该位置的地理经纬度坐标，并在这个位置上添加一个标注。 注意:在调用Ge......  -->
+        <p class="article-more-link">
+          <a href="/2017/12/10/Bmap/#more">weiter lesen</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-基金财务数据"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -298,21 +348,22 @@
       
         <ol>
 <li>问题一：自选基金中左滑进行删除时点击列表项不能跳转到详情页，但是左滑后还是会跳转<blockquote>
-<p>原因：仅仅设置判断条件$(this).css(‘left’) === ‘0px’<br><img src="../image/jijin1.png" alt="image"></p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>解决方法：添加$(this).css(‘left’) === ‘auto’判断条件</p>
-</blockquote>
-<p><img src="../image/jijin2.png" alt="image"></p>
-<ol>
-<li>问题二：添加一条历史记录时需要保存基金名称和基金id两个字段，而设置localStorage时只能储存字符串<blockquote>
-<p>解决方法：使用两个特殊字符做间隔拼接字符串：<br>页面初始化时获取到字符串在将其分割成数组即可；<br><img src="../image/jijin3.png" alt="image"></p>
-</blockquote>
-</li>
-</ol>
+<p>原因：仅仅设置判断条件$(this).css(‘left’) === ‘0px’</p>
+        <!-- 
+问题一：自选基金中左滑进行删除时点击列表项不能跳转到详情页，但是左滑后还是会跳转
+原因：仅仅设置判断条件$(this).css(‘left’) === ‘0px’
 
+解决方法：添加$(this).css(‘left’) === ‘auto’判断条件
+
+
+
+
+
+问题二：添加一条历史记录时需要保存基金名称和基金id两个字段，而设置localStorage时只能储存字符串
+解决方法：使用两个特殊......  -->
+        <p class="article-more-link">
+          <a href="/2017/12/10/基金财务数据/#more">weiter lesen</a>
+        </p>
       
     </div>
     <footer class="article-footer">
@@ -457,148 +508,20 @@ https://github.com/amfe/article/issues/17
       
         <h3 id="1、登录"><a href="#1、登录" class="headerlink" title="1、登录"></a>1、登录</h3><h5 id="（1）最初版本"><a href="#（1）最初版本" class="headerlink" title="（1）最初版本"></a>（1）最初版本</h5><ul>
 <li>接口：access–/account/login</li>
-<li>数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    deviceno: getDeviceno,</div><div class="line">    devicetype: 3,</div><div class="line">    accounttype: 2,</div><div class="line">    account: name,</div><div class="line">    pwd: $.md5(pwd),</div><div class="line">    isforce: 1</div><div class="line">&#125;</div><div class="line">&lt;!-- more --&gt;</div></pre></td></tr></table></figure>
+<li>数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    deviceno: getDeviceno,</div><div class="line">    devicetype: 3,</div><div class="line">    accounttype: 2,</div><div class="line">    account: name,</div><div class="line">    pwd: $.md5(pwd),</div><div class="line">    isforce: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="2-第二版本"><a href="#2-第二版本" class="headerlink" title="(2)第二版本"></a>(2)第二版本</h5><ul>
-<li>接口：account/user/v2/login</li>
-<li>数据：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    deviceno: homed.getDeviceno() + $.md5(homed.getDeviceno()).substr(7, 1),</div><div class="line">    devicetype: &apos;yuj&apos;,</div><div class="line">    accounttype: 2,</div><div class="line">    account: name,</div><div class="line">    timestamp: (new Date().getTime()).toString(),</div><div class="line">    pwd: $.md5(password),</div><div class="line">    signature: &apos;&apos;,</div><div class="line">    remember: 1,</div><div class="line">    isforce: 1</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h5 id="3-验证码登录（新设备须进行验证码验证登录）"><a href="#3-验证码登录（新设备须进行验证码验证登录）" class="headerlink" title="(3)验证码登录（新设备须进行验证码验证登录）"></a>(3)验证码登录（新设备须进行验证码验证登录）</h5><p>已有数据：用户名、密码、是否记住密码</p>
-<h6 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">获取图片验证码--&gt;输入手机号码</div><div class="line">输入手机号码--&gt;验证图片验证码并获取手机验证码</div><div class="line">验证图片验证码并获取手机验证码--&gt;验证手机验证码</div><div class="line">验证手机验证码--&gt;登录</div></pre></td></tr></table></figure>
-<p>获取图片验证码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">// 未登录情况下通过第三方接口获取token</div><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;/account/get_third_token&apos;,</div><div class="line">    type: &apos;POST&apos;,</div><div class="line">    async: false,</div><div class="line">    data: JSON.stringify(&#123;</div><div class="line">        usagescen: 1,</div><div class="line">        appname: &apos;weixin&apos;</div><div class="line">    &#125;),</div><div class="line">    success: function(_data) &#123;</div><div class="line">        if (_data.ret === 0) &#123;</div><div class="line">            var thirdToken = _data.access_token;</div><div class="line">            $.ajax(&#123;</div><div class="line">                url: &apos;/account/user/get_picture_code&apos;,</div><div class="line">                type: &apos;GET&apos;,</div><div class="line">                data: &#123;</div><div class="line">                    accesstoken: thirdToken</div><div class="line">                &#125;,</div><div class="line">                success: function(_data) &#123;</div><div class="line">                    if (_data.ret == 0) &#123;</div><div class="line">                        $(&apos;#picCode&apos;).attr(&apos;src&apos;, _data.image);</div><div class="line">                        $(&apos;#picCode&apos;).attr(&apos;value&apos;, _data.picid);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<ul>
-<li>获取第三方接口：account/get_third_token</li>
-<li><p>获取该接口数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">JSON.stringify(&#123;</div><div class="line">    usagescen: 1,</div><div class="line">    appname: &apos;weixin&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>获取图片code接口：account/user/get_picture_code</p>
-</li>
-<li>获取该接口数据：accesstoken: thirdToken<h6 id="验证图片验证码并获取手机验证码"><a href="#验证图片验证码并获取手机验证码" class="headerlink" title="验证图片验证码并获取手机验证码"></a>验证图片验证码并获取手机验证码</h6></li>
-<li>接口：account/user/v2/get_verify_code</li>
-<li>数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    pincode: picCode,</div><div class="line">    picid: picId,</div><div class="line">    verifytype: 3,</div><div class="line">    account: num,</div><div class="line">    accounttype: 1</div><div class="line">&#125;;</div><div class="line">    返回ret为9220时，是因为图片验证码错误</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h6 id="验证手机验证码"><a href="#验证手机验证码" class="headerlink" title="验证手机验证码"></a>验证手机验证码</h6><ul>
-<li>接口：account/user/validate_verify_code</li>
-<li>数据：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    verifycode: msgCode,</div><div class="line">    verifytype: 3,</div><div class="line">    account: phoneNum</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h6 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h6><ul>
-<li>接口：account/user/v2/login</li>
-<li>数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    deviceno: homed.getDeviceno() + $.md5(homed.getDeviceno()).substr(7, 1),</div><div class="line">    devicetype: &apos;yuj&apos;,</div><div class="line">    accounttype: 2,</div><div class="line">    account: name,</div><div class="line">    timestamp: (new Date().getTime()).toString(),</div><div class="line">    pwd: $.md5(password),</div><div class="line">    signature: &apos;&apos;,</div><div class="line">    remember: remember,</div><div class="line">    isforce: 1</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="4-扫码登录"><a href="#4-扫码登录" class="headerlink" title="(4)扫码登录"></a>(4)扫码登录</h5><ul>
-<li><p>获取配置选项:<br>(1)接口：weixinnew/manage/server/get_wx_package.php<br><br>(2)参数：url: location.href<br><br>(3)配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">wx.config(&#123;</div><div class="line">    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。</div><div class="line">    appId: data.appId, // 必填，公众号的唯一标识</div><div class="line">    timestamp: data.timestamp, // 必填，生成签名的时间戳</div><div class="line">    nonceStr: data.nonceStr, // 必填，生成签名的随机串</div><div class="line">    signature: data.signature, // 必填，签名，见附录1</div><div class="line">    jsApiList: [&apos;checkJsApi&apos;, &apos;scanQRCode&apos;] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>初始化监听事件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">wx.ready(function() &#123;</div><div class="line">    wx.checkJsApi(&#123;</div><div class="line">        jsApiList : [&apos;scanQRCode&apos;],</div><div class="line">        success : function(res) &#123;</div><div class="line">            $(&apos;.otherWay&apos;).text(&apos;WAIT FOR scan&apos;, res);</div><div class="line">        &#125;,</div><div class="line">        error: function(err) &#123;</div><div class="line">            $(&apos;.otherWay&apos;).text(&apos;what\&apos;s wrong&apos;, err);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    // 扫码登陆</div><div class="line">    $(&quot;#scanBtn&quot;).on(&apos;click tap&apos;, function() &#123;</div><div class="line">        wx.scanQRCode(&#123;</div><div class="line">            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，</div><div class="line">            scanType: [ &quot;qrCode&quot;,&quot;barCode&quot; ], // 可以指定扫二维码还是一维码，默认二者都有</div><div class="line">            success: function(res) &#123;</div><div class="line">                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果</div><div class="line">                $(&apos;.otherWay&apos;).text(result);</div><div class="line">                window.location.href = result;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="5-微信授权登录"><a href="#5-微信授权登录" class="headerlink" title="(5)微信授权登录"></a>(5)微信授权登录</h5><ol>
-<li>在微信公众号请求用户网页授权之前，开发者需要先到公众平台官网中的“开发 - 接口权限 - 网页服务 - 网页帐号 - 网页授权获取用户基本信息”的配置选项中，修改授权回调域名；</li>
-<li>授权回调域名配置规范为全域名；</li>
-<li>如果公众号登录授权给了第三方开发者来进行管理，则不必做任何设置，由第三方代替公众号实现网页授权即可 <h6 id="关于网页授权access-token和普通access-token的区别"><a href="#关于网页授权access-token和普通access-token的区别" class="headerlink" title="关于网页授权access_token和普通access_token的区别"></a>关于网页授权access_token和普通access_token的区别</h6>1、微信网页授权是通过OAuth2.0机制实现的，在用户授权给公众号后，公众号可以获取到一个网页授权特有的接口调用凭证（网页授权access_token），通过网页授权access_token可以进行授权后接口调用，如获取用户基本信息； </li>
-</ol>
-<p>2、其他微信接口，需要通过基础支持中的“获取access_token”接口来获取到的普通access_token调用。</p>
-<blockquote>
-<p>更多知识点看summary-其他-微信授权</p>
-</blockquote>
-<ul>
-<li>获取用户信息,snsapi_userinfo方式<blockquote>
-<p><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd7342e5e1b7e78d4&amp;redirect_uri=http%3A%2F%2Fapps.homed.me%2Fweixinnew%2FloginTest%2FoauthLogin.html&amp;response_type=code&amp;scope=snsapi_base&amp;state=1#wechat_redirect" target="_blank" rel="external">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd7342e5e1b7e78d4&amp;redirect_uri=http%3A%2F%2Fapps.homed.me%2Fweixinnew%2FloginTest%2FoauthLogin.html&amp;response_type=code&amp;scope=snsapi_base&amp;state=1#wechat_redirect</a></p>
-</blockquote>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function getUserInfo($appid,$secret,$code,$jssdk)&#123;</div><div class="line">    // 通过code置换openid，同时获取授权token</div><div class="line">    $access_token_url = &quot;https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&amp;secret=$secret&amp;code=$code&amp;grant_type=authorization_code&quot;;</div><div class="line">    $res_token = json_decode(httpGet($access_token_url));</div><div class="line">    $access_token =$res_token-&gt;access_token;</div><div class="line">    $openid = $res_token-&gt;openid;</div><div class="line">    // 授权access token获得用户基本信息</div><div class="line">    $user_info_url = &quot;https://api.weixin.qq.com/sns/userinfo?access_token=$access_token&amp;openid=$openid&amp;lang=zh_CN&quot;;</div><div class="line">    $res_user_info = json_decode($jssdk-&gt;httpGet($user_info_url));</div><div class="line">    return $res_user_info;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>获取用户信息,snsapi_base方式<blockquote>
-<p><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd7342e5e1b7e78d4&amp;redirect_uri=http%3A%2F%2Fapps.homed.me%2Fweixinnew%2FloginTest%2FoauthLogin.html&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=1#wechat_redirect" target="_blank" rel="external">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd7342e5e1b7e78d4&amp;redirect_uri=http%3A%2F%2Fapps.homed.me%2Fweixinnew%2FloginTest%2FoauthLogin.html&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=1#wechat_redirect</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function getUserInfoBase($appid,$secret,$code,$jssdk)&#123;</div><div class="line">    // 通过code置换openid，同时获取授权token</div><div class="line">    $access_token_url = &quot;https://api.weixin.qq.com/sns/oauth2/access_token?appid=$appid&amp;secret=$secret&amp;code=$code&amp;grant_type=authorization_code&quot;;</div><div class="line">    $res_token = json_decode(httpGet($access_token_url));</div><div class="line">    $access_token =$jssdk-&gt;getAccessToken();</div><div class="line">    $openid = $res_token-&gt;openid;</div><div class="line">    // 全局access token获得用户基本信息</div><div class="line">    $user_info_url = &quot;https://api.weixin.qq.com/cgi-bin/user/info?access_token=$access_token&amp;openid=$openid&amp;lang=zh_CN&quot;;</div><div class="line">    $res_user_info = json_decode(httpGet($user_info_url));</div><div class="line">    return $res_user_info;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><h5 id="用户名密码"><a href="#用户名密码" class="headerlink" title="用户名密码"></a>用户名密码</h5><p>步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">输入用户名密码--&gt;验证用户名是否唯一</div><div class="line">验证用户名是否唯一--&gt;注册账号</div></pre></td></tr></table></figure>
-<h5 id="用户名密码-验证码"><a href="#用户名密码-验证码" class="headerlink" title="用户名密码/验证码"></a>用户名密码/验证码</h5><p>步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">选择两项中某一项--&gt;输入用户名密码</div><div class="line">输入用户名密码--&gt;验证用户名是否唯一</div><div class="line">验证用户名是否唯一--&gt;注册账号</div><div class="line">选择两项中某一项--&gt;输入手机号</div><div class="line">输入手机号--&gt;验证手机号并获取验证码</div><div class="line">验证手机号并获取验证码--&gt;输入验证码并验证</div><div class="line">输入验证码并验证--&gt;注册账号</div></pre></td></tr></table></figure>
-<h5 id="用户名密码-验证码-1"><a href="#用户名密码-验证码-1" class="headerlink" title="用户名密码+验证码"></a>用户名密码+验证码</h5><p>步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">输入用户名密码--&gt;验证用户名是否唯一</div><div class="line">验证用户名是否唯一--&gt;输入手机号</div><div class="line">输入手机号--&gt;验证手机号并获取验证码</div><div class="line">验证手机号并获取验证码--&gt;输入验证码并验证</div><div class="line">输入验证码并验证--&gt;注册账号</div></pre></td></tr></table></figure>
-<h5 id="用户名密码-验证码第二版"><a href="#用户名密码-验证码第二版" class="headerlink" title="用户名密码+验证码第二版"></a>用户名密码+验证码第二版</h5><p>步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">输入用户名密码--&gt;验证用户名是否唯一</div><div class="line">验证用户名是否唯一--&gt;输入图片验证码</div><div class="line">输入图片验证码--&gt;输入手机号</div><div class="line">输入手机号--&gt;验证手机号和图片验证码并获取验证码</div><div class="line">验证手机号和图片验证码并获取验证码--&gt;输入验证码并验证</div><div class="line">输入验证码并验证--&gt;注册账号</div></pre></td></tr></table></figure>
-<p>1、验证用户名是否唯一</p>
-<ul>
-<li>接口：account/user/name_is_uniqueness</li>
-<li>参数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: name,</div><div class="line">    pwd: $.md5(pwd),</div><div class="line">    iconid: 1,</div><div class="line">    accounttype: 1,</div><div class="line">    type: 0</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>2、获取图片验证码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// 未登录情况下通过第三方接口获取token</div><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;account/get_third_token&apos;,</div><div class="line">    type: &apos;POST&apos;,</div><div class="line">    async: false,</div><div class="line">    data: JSON.stringify(&#123;</div><div class="line">        usagescen: 1,</div><div class="line">        appname: &apos;weixin&apos;</div><div class="line">    &#125;),</div><div class="line">    success: function(_data) &#123;</div><div class="line">        if (_data.ret === 0) &#123;</div><div class="line">            var thirdToken = _data.access_token;</div><div class="line">            $.ajax(&#123;</div><div class="line">                url: &apos;account/user/get_picture_code&apos;,</div><div class="line">                type: &apos;GET&apos;,</div><div class="line">                data: &#123;</div><div class="line">                    accesstoken: thirdToken</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>3、监听手机号格式是否正确</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> $(&apos;#number&apos;).bind(&apos;input propertychange&apos;, function() &#123;</div><div class="line">    var phoneNum = $(this).val(),</div><div class="line">        isPhone = /^1(3|4|5|7|8)\d&#123;9&#125;$/.test(phoneNum);</div><div class="line">    if(!!isPhone) &#123;</div><div class="line">        $(&apos;#getVerify&apos;).addClass(&apos;available&apos;);</div><div class="line">        callback&amp;&amp;callback();</div><div class="line">    &#125; else &#123;</div><div class="line">        $(&apos;#getVerify&apos;).removeClass(&apos;available&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>4、获取短信验证码</p>
-<ul>
-<li>接口：account/user/get_verify_code</li>
-<li>参数：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: num,</div><div class="line">    verifytype: 3,</div><div class="line">    account: num,</div><div class="line">    accounttype: 1</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>5、验证手机短信验证码</p>
-<ul>
-<li>接口：account/user/validate_verify_code</li>
-<li>参数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: phoneNum,</div><div class="line">    verifycode: msgCode,</div><div class="line">    verifytype: 3</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>6、验证图片验证码并获取短信验证码</p>
-<ul>
-<li>接口：account/user/v2/get_verify_code</li>
-<li>参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    pincode: picCode,</div><div class="line">    picid: picId,</div><div class="line">    verifytype: 3,</div><div class="line">    account: num,</div><div class="line">    accounttype: 1</div><div class="line">&#125;;</div><div class="line">if (_data.ret == 9220) &#123;</div><div class="line">    homed.layerMsg(&quot;图片验证码错误&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>7、注册账号</p>
-<ul>
-<li>接口：account/user/register</li>
-<li>参数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: name,</div><div class="line">    accounttype: type,</div><div class="line">    iconid: 1,</div><div class="line">    pwd: psd</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><h5 id="只需短信验证码"><a href="#只需短信验证码" class="headerlink" title="只需短信验证码"></a>只需短信验证码</h5><ol>
-<li>获取手机验证码</li>
-</ol>
-<ul>
-<li>接口：account/user/get_verify_code</li>
-<li>参数：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vcParams = &#123;</div><div class="line">    username: name,</div><div class="line">    verifytype: 2,</div><div class="line">    account: num,</div><div class="line">    accounttype: 1</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<ol>
-<li>验证手机验证码</li>
-</ol>
-<ul>
-<li>接口：account/user/validate_verify_code</li>
-<li>参数：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: name,</div><div class="line">    verifycode: msgCode,</div><div class="line">    verifytype: 2</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol>
-<li>提交新密码</li>
-</ol>
-<ul>
-<li>接口：account/user/create_pwd</li>
-<li>参数：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    username: name,</div><div class="line">    newpwd: $.md5(pass)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="图片-短信验证码"><a href="#图片-短信验证码" class="headerlink" title="图片+短信验证码"></a>图片+短信验证码</h5><ol>
-<li><p>获取图片验证码</p>
-<blockquote>
-<p>同上述方法</p>
-</blockquote>
-</li>
-<li><p>获取手机验证码</p>
-</li>
-<li>验证手机验证码</li>
-<li>提交新密码</li>
-</ol>
+        <!-- 1、登录（1）最初版本
+接口：access–/account/login
+数据：12345678data = &#123;    deviceno: getDeviceno,    devicetype: 3,    accounttype: 2,    account: name,    pwd: $.md5(pwd),    isforce: 1&#125;
 
+
+
+(2)第二版本
+接口：......  -->
+        <p class="article-more-link">
+          <a href="/2017/12/09/login知识点/#more">weiter lesen</a>
+        </p>
       
     </div>
     <footer class="article-footer">
