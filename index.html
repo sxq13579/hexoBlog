@@ -271,6 +271,68 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-PHP-中转"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/12/10/PHP-中转/">PHP 中转</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/12/10/PHP-中转/" class="article-date">
+	  <time datetime="2017-12-10T12:08:37.000Z" itemprop="datePublished">2017-12-10</time>
+	</a>
+
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="php请求setopt常见参数："><a href="#php请求setopt常见参数：" class="headerlink" title="php请求setopt常见参数："></a>php请求setopt常见参数：</h5><p><img src="../image/php.png" alt="参数"></p>
+<blockquote>
+<p>问题一：ajax请求时出现跨域：</p>
+</blockquote>
+<ul>
+<li>原因：所访问的页面和你的应用不在同一个域下；</li>
+<li>解决方法：</li>
+<li><p>1、把中转文件任何一个你能发送请求的并且能访问公网的服务器上；<br>2、应用不要放到服务器里面，直接把中转文件放本地</p>
+<blockquote>
+<p>问题二：通过PHP请求时对PHP的请求仍然跨域：</p>
+</blockquote>
+</li>
+<li><p>原因：中转文件放在一个服务器上，但是项目运行环境跟中转文件不在同一个域，那这样还是会跨越</p>
+</li>
+<li>解决方法：</li>
+<li>1、可以把中转文件放在和项目同一个域的服务器上；<br>2、再在项目服务器上中转一次<blockquote>
+<p>问题三：<br>作为一个前端开发人员，在对服务器数据进行请求的时候经常会面临跨域问题，因此需要熟练掌握几种解决跨域问题的方法：<br><img src="../image/php.png" alt="image"><br>问题四：ajax请求设置请求头：<a href="https://q.cnblogs.com/q/67539/" target="_blank" rel="external">https://q.cnblogs.com/q/67539/</a></p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    // url: &apos;http://127.0.0.1/gardenMonitor/js/getData.php&apos;,</div><div class="line">    url: &apos;http://192.168.20.250:9080/kindergarten_backOffice/interface/query/camera&apos;,</div><div class="line">    type: &apos;post&apos;,</div><div class="line">    // headers: &#123;</div><div class="line">    //     &apos;id&apos;: userid,</div><div class="line">    //     &apos;timestamp&apos;: timestamp,</div><div class="line">    //     &apos;signature&apos;: $.md5(timestamp + secret + userid)</div><div class="line">    // &#125;,</div><div class="line">    beforeSend: function(request) &#123;</div><div class="line">        var userid = 3,</div><div class="line">            timestamp = Date.parse(new Date())/1000,</div><div class="line">            secret = &apos;8fa4c58fe00d6a74&apos;;</div><div class="line">        request.setRequestHeader(&quot;id&quot;, &quot;3&quot;);</div><div class="line">        request.setRequestHeader(&quot;timestamp&quot;, timestamp);</div><div class="line">        request.setRequestHeader(&quot;signature&quot;, $.md5(timestamp + secret + userid));</div><div class="line">    &#125;,</div><div class="line">    success: function(data) &#123;</div><div class="line">    &#125;,</div><div class="line">    error: function(a, b, c) &#123;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>服务器端设置：<br><img src="../image/php1.png" alt="设置"><br>结果：<br><img src="../image/php2.png" alt="结果"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-WX-sdk"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -767,61 +829,6 @@ https://github.com/amfe/article/issues/17
 像素，又称画素，是图像显示的基本单位，译自英文“pixel”，pix是英语单词pictur......  -->
         <p class="article-more-link">
           <a href="/2017/12/09/px-TO-rem/#more">weiter lesen</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-  
-    <article id="post-login知识点"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2017/12/09/login知识点/">login知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2017/12/09/login知识点/" class="article-date">
-	  <time datetime="2017-12-09T15:15:46.000Z" itemprop="datePublished">2017-12-09</time>
-	</a>
-
-      
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、登录"><a href="#1、登录" class="headerlink" title="1、登录"></a>1、登录</h3><h5 id="（1）最初版本"><a href="#（1）最初版本" class="headerlink" title="（1）最初版本"></a>（1）最初版本</h5><ul>
-<li>接口：access–/account/login</li>
-<li>数据：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    deviceno: getDeviceno,</div><div class="line">    devicetype: 3,</div><div class="line">    accounttype: 2,</div><div class="line">    account: name,</div><div class="line">    pwd: $.md5(pwd),</div><div class="line">    isforce: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-        <!-- 1、登录（1）最初版本
-接口：access–/account/login
-数据：12345678data = &#123;    deviceno: getDeviceno,    devicetype: 3,    accounttype: 2,    account: name,    pwd: $.md5(pwd),    isforce: 1&#125;
-
-
-
-(2)第二版本
-接口：......  -->
-        <p class="article-more-link">
-          <a href="/2017/12/09/login知识点/#more">weiter lesen</a>
         </p>
       
     </div>
