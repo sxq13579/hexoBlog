@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>html5 canvas | SandPgirl</title>
+  <title>wx sdk | SandPgirl</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+  <meta name="description" content="wx-录音功能步骤说明： 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号] 引入JS文件 通过config接口注入权限验证配置 通过ready接口处理成功验证 通过error接口处理失败验证">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html5 canvas">
-<meta property="og:url" content="http://shenxq.com/2017/12/10/html5-canvas/index.html">
+<meta property="og:title" content="WX sdk">
+<meta property="og:url" content="http://shenxq.com/2017/12/10/WX-sdk/index.html">
 <meta property="og:site_name" content="SandPgirl">
-<meta property="og:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+<meta property="og:description" content="wx-录音功能步骤说明： 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号] 引入JS文件 通过config接口注入权限验证配置 通过ready接口处理成功验证 通过error接口处理失败验证">
 <meta property="og:locale" content="English and Chinese">
-<meta property="og:updated_time" content="2017-12-10T09:03:34.041Z">
+<meta property="og:image" content="http://note.youdao.com/favicon.ico">
+<meta property="og:updated_time" content="2017-12-10T09:19:08.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html5 canvas">
-<meta name="twitter:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
+<meta name="twitter:title" content="WX sdk">
+<meta name="twitter:description" content="wx-录音功能步骤说明： 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号] 引入JS文件 通过config接口注入权限验证配置 通过ready接口处理成功验证 通过error接口处理失败验证">
+<meta name="twitter:image" content="http://note.youdao.com/favicon.ico">
   
     <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
   
@@ -159,7 +161,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-html5-canvas" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-WX-sdk" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -167,7 +169,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      html5 canvas
+      WX sdk
     </h1>
   
 
@@ -175,8 +177,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/12/10/html5-canvas/" class="article-date">
-	  <time datetime="2017-12-10T09:02:55.000Z" itemprop="datePublished">2017-12-10</time>
+	<a href="/2017/12/10/WX-sdk/" class="article-date">
+	  <time datetime="2017-12-10T09:18:48.000Z" itemprop="datePublished">2017-12-10</time>
 	</a>
 
       
@@ -190,37 +192,45 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="湖北微信遥控器："><a href="#湖北微信遥控器：" class="headerlink" title="湖北微信遥控器："></a>湖北微信遥控器：</h5><h6 id="1、问题一："><a href="#1、问题一：" class="headerlink" title="1、问题一："></a>1、问题一：</h6><blockquote>
-<p>canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；<br>另外，在遥控器绘图过程中线条粗细也会随之变化；</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>具体解释：<br><a href="http://www.cnblogs.com/wmhuang/p/6477223.html" target="_blank" rel="external">http://www.cnblogs.com/wmhuang/p/6477223.html</a><br></p>
-</blockquote>
-<p>解决方法：<br><br>（1）写js时，根据dpr动态设置canvas的宽高，并改变内部图形的大小倍数；<br><br>（2）直接将canvas的狂傲设置为style中宽高的dpr倍，将内部图形也设置成相应倍数。<br></p>
-<h6 id="2、问题二："><a href="#2、问题二：" class="headerlink" title="2、问题二："></a>2、问题二：</h6><blockquote>
-<p>在vue编写遥控器页面绘图时，由于我首先显示的是按键页面，导致页面显示canvas绘图时，canvas不能正常显示个刷新；</p>
-<p>原因：<br>刚开始canvas不显示从而不能初始化canvas属性</p>
-<p>解决方法：<br>刚开始先使canvas显示，当初始化数据之后，再调整页面显示情况</p>
-</blockquote>
-<h6 id="3、canvas知识点："><a href="#3、canvas知识点：" class="headerlink" title="3、canvas知识点："></a>3、canvas知识点：</h6><blockquote>
-<p>canvas.save()把当前状态的一份拷贝压入到一个保存图像状态的栈中，允许临时地改变图像状态，然后通过调用restore()来恢复以前的值。</p>
-<p>canvas.restore()方法从栈中弹出存储的图形状态并回复CanvasRenderingContext2D对象的额属性、剪切路径和变换矩阵的值。</p>
-</blockquote>
-<ul>
-<li>这里canvas.save();和canvas.restore();是两个相互匹配出现的，作用是用来保存画布的状态和取出保存的状态的。</li>
-<li>我们在操作之前调用canvas.save()来保存画布当前的状态，当操作之后取出之前保存过的状态，这样就不会对其他的元素进行影响<br></li>
+        <h3 id="wx-录音功能"><a href="#wx-录音功能" class="headerlink" title="wx-录音功能"></a>wx-录音功能</h3><h5 id="步骤说明："><a href="#步骤说明：" class="headerlink" title="步骤说明："></a>步骤说明：</h5><ul>
+<li>先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号]</li>
+<li>引入JS文件</li>
+<li>通过config接口注入权限验证配置</li>
+<li>通过ready接口处理成功验证</li>
+<li>通过error接口处理失败验证<a id="more"></a>
+</li>
 </ul>
-<p>代码段1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.save();   </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.restore();   </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码段2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这两个代码片段中我们都假设有两张图片bmp1和bmp2，并且都画在画布上!<br><br>那么代码段1和代码段2的不同:!<br></p>
+<hr>
+<ul>
+<li>//假设已引入微信jssdk。【支持使用 AMD/CMD 标准模块加载方法加载】<br></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">wx.config(&#123;</div><div class="line">    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。</div><div class="line">    appId: &apos;&apos;, // 必填，公众号的唯一标识</div><div class="line">    timestamp: , // 必填，生成签名的时间戳</div><div class="line">    nonceStr: &apos;&apos;, // 必填，生成签名的随机串</div><div class="line">    signature: &apos;&apos;,// 必填，签名</div><div class="line">    jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wx.ready(function()&#123;</div><div class="line">    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wx.error(function(res)&#123;</div><div class="line">    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//开始录音接口</div><div class="line">wx.startRecord();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">停止录音接口</div><div class="line">wx.stopRecord(&#123;</div><div class="line">    success: function (res) &#123;</div><div class="line">        var localId = res.localId;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>要命的invalid signature。</p>
 <ol>
-<li>代码段1中我们进行画布缩放的之前保存了画布状态，做了缩放操作之后又取出之前保存的状态，这样做是为了保证bmp2正常画出来不受到缩放的影响！</li>
-<li>代码段2里，画了bmp1后就执行了缩放操作，并且没有保存状态！紧接着画了bmp2，那么bmp2也会一样受到缩放的影响！！<br>所以我们如果单独处理一张图片的时候，而且不想影响其他部分的绘制，那么应该如下来做：!<br></li>
+<li>签名要用到的jsapi_ticket需要保存的，2小时有效期。如果在2小时内出现问题需要删除才能工作，一般是自身程序的问题，请检查。</li>
+<li>nonceStr和noncestr的大小写，当心！</li>
+<li>url一定要当心，如果是”<a href="http://x.com/jspay?oid=0&amp;attr=1#wechat&quot;的形式，那么应该保留的是&quot;http://x.com/jspay?oid=0&amp;attr=1&quot;。" target="_blank" rel="external">http://x.com/jspay?oid=0&amp;attr=1#wechat&quot;的形式，那么应该保留的是&quot;http://x.com/jspay?oid=0&amp;attr=1&quot;。</a></li>
+<li>据此，url在JavaScript中是location.href.split(‘#’)[0]获取。</li>
+<li>据此，url在php中用$protocol$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]拼装，</li>
+<li>据说会有多余的80端口问题，但是记录者没有遇到过，总之请小心。</li>
+<li>url在JavaScript中千万别忘记“encodeURIComponent”！否则后果很诡异，遇到过初始化的时候报invalid signature，但是API接口又能调用的情况。</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">    Canvas canvas = sfh.lockCanvas();    </div><div class="line">    canvas.drawColor(Color.BLACK);  </div><div class="line">    canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">    canvas.save();   </div><div class="line">    canvas.scale(5f, 5f);  </div><div class="line">    canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">    canvas.restore();   </div><div class="line">    sfh.unlockCanvasAndPost(canvas);    </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>2、问题二：permission denied<br><br>原因：<br><br>（1）代码没有放在服务器上；<br><br>（2）见下图<br><img src="http://note.youdao.com/favicon.ico" alt="image"><br>3、问题三（页面优化）：</p>
+<blockquote>
+<p>在第一次按住录音后，由于用户未曾允许录音，微信会提示用户授权允许在本页面使用微信录音功能，这时用户会放开录音按钮转而去点击允许，在用户允许后，才真正会开始录音，而此时用户早已放开录音按钮，那么录音按钮上便不会再有touchend事件，录音便会一直进行。</p>
+</blockquote>
+<p>解决策略：<br></p>
+<blockquote>
+<p>使用微信jssdk接口录音，在同一个域只需要授权一次，即第一次使用录音的时候，微信自己会弹出对话框询问是否允许录音，用户点击允许后，之后再使用录音时，便不会再咨询用户是否允许。<br><br>使用localStorage记录用户是否曾授权，并以此来判断是否需要在刚进入页面是自动录一段录音来触发用户授权</p>
+</blockquote>
+<p>参考：</p>
+<ol>
+<li><a href="https://segmentfault.com/q/1010000002520634" target="_blank" rel="external">https://segmentfault.com/q/1010000002520634</a></li>
+</ol>
 
       
     </div>
@@ -272,19 +282,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2017/12/10/WX-sdk/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          WX sdk
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/10/html5-video/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/10/html5-canvas/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">html5 video</div>
+      <div class="article-nav-title">html5 canvas</div>
     </a>
   
 </nav>
@@ -298,7 +299,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Inhalt</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#湖北微信遥控器："><span class="nav-number">1.</span> <span class="nav-text">湖北微信遥控器：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、问题一："><span class="nav-number">1.1.</span> <span class="nav-text">1、问题一：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、问题二："><span class="nav-number">1.2.</span> <span class="nav-text">2、问题二：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、canvas知识点："><span class="nav-number">1.3.</span> <span class="nav-text">3、canvas知识点：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#wx-录音功能"><span class="nav-number">1.</span> <span class="nav-text">wx-录音功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤说明："><span class="nav-number">1.0.1.</span> <span class="nav-text">步骤说明：</span></a></li></ol></li></ol></li></ol>
     
     </div>
   </aside>
