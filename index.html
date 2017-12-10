@@ -271,6 +271,62 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-基金财务数据"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2017/12/10/基金财务数据/">基金财务数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/12/10/基金财务数据/" class="article-date">
+	  <time datetime="2017-12-10T06:25:14.000Z" itemprop="datePublished">2017-12-10</time>
+	</a>
+
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>问题一：自选基金中左滑进行删除时点击列表项不能跳转到详情页，但是左滑后还是会跳转<blockquote>
+<p>原因：仅仅设置判断条件$(this).css(‘left’) === ‘0px’<br><img src="../image/jijin1.png" alt="image"></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>解决方法：添加$(this).css(‘left’) === ‘auto’判断条件</p>
+</blockquote>
+<p><img src="../image/jijin2.png" alt="image"></p>
+<ol>
+<li>问题二：添加一条历史记录时需要保存基金名称和基金id两个字段，而设置localStorage时只能储存字符串<blockquote>
+<p>解决方法：使用两个特殊字符做间隔拼接字符串：<br>页面初始化时获取到字符串在将其分割成数组即可；<br><img src="../image/jijin3.png" alt="image"></p>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-天气接口"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
