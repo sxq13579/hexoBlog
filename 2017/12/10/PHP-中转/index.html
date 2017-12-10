@@ -9,20 +9,20 @@
   
   
   
-  <meta name="description" content="php请求setopt常见参数：  问题一：ajax请求时出现跨域：   原因：所访问的页面和你的应用不在同一个域下； 解决方法： 1、把中转文件任何一个你能发送请求的并且能访问公网的服务器上；2、应用不要放到服务器里面，直接把中转文件放本地  问题二：通过PHP请求时对PHP的请求仍然跨域：   原因：中转文件放在一个服务器上，但是项目运行环境跟中转文件不在同一个域，那这样还是会跨越  解决方法">
+  <meta name="description" content="php请求setopt常见参数：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP 中转">
 <meta property="og:url" content="http://shenxq.com/2017/12/10/PHP-中转/index.html">
 <meta property="og:site_name" content="SandPgirl">
-<meta property="og:description" content="php请求setopt常见参数：  问题一：ajax请求时出现跨域：   原因：所访问的页面和你的应用不在同一个域下； 解决方法： 1、把中转文件任何一个你能发送请求的并且能访问公网的服务器上；2、应用不要放到服务器里面，直接把中转文件放本地  问题二：通过PHP请求时对PHP的请求仍然跨域：   原因：中转文件放在一个服务器上，但是项目运行环境跟中转文件不在同一个域，那这样还是会跨越  解决方法">
+<meta property="og:description" content="php请求setopt常见参数：">
 <meta property="og:locale" content="English and Chinese">
 <meta property="og:image" content="http://shenxq.com/2017/12/10/image/php.png">
-<meta property="og:image" content="http://shenxq.com/2017/12/10/image/php1.png">
 <meta property="og:image" content="http://shenxq.com/2017/12/10/image/php2.png">
-<meta property="og:updated_time" content="2017-12-10T12:13:33.199Z">
+<meta property="og:image" content="http://shenxq.com/2017/12/10/image/php3.png">
+<meta property="og:updated_time" content="2017-12-10T12:28:24.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 中转">
-<meta name="twitter:description" content="php请求setopt常见参数：  问题一：ajax请求时出现跨域：   原因：所访问的页面和你的应用不在同一个域下； 解决方法： 1、把中转文件任何一个你能发送请求的并且能访问公网的服务器上；2、应用不要放到服务器里面，直接把中转文件放本地  问题二：通过PHP请求时对PHP的请求仍然跨域：   原因：中转文件放在一个服务器上，但是项目运行环境跟中转文件不在同一个域，那这样还是会跨越  解决方法">
+<meta name="twitter:description" content="php请求setopt常见参数：">
 <meta name="twitter:image" content="http://shenxq.com/2017/12/10/image/php.png">
   
     <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
@@ -194,7 +194,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="php请求setopt常见参数："><a href="#php请求setopt常见参数：" class="headerlink" title="php请求setopt常见参数："></a>php请求setopt常见参数：</h5><p><img src="../image/php.png" alt="参数"></p>
+        <h5 id="php请求setopt常见参数："><a href="#php请求setopt常见参数：" class="headerlink" title="php请求setopt常见参数："></a>php请求setopt常见参数：</h5><p><img src="../image/php.png" alt="pic1"><br><a id="more"></a></p>
 <blockquote>
 <p>问题一：ajax请求时出现跨域：</p>
 </blockquote>
@@ -218,7 +218,7 @@
 <p>问题四：ajax请求设置请求头：<a href="https://q.cnblogs.com/q/67539/" target="_blank" rel="external">https://q.cnblogs.com/q/67539/</a></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    // url: &apos;http://127.0.0.1/gardenMonitor/js/getData.php&apos;,</div><div class="line">    url: &apos;http://192.168.20.250:9080/kindergarten_backOffice/interface/query/camera&apos;,</div><div class="line">    type: &apos;post&apos;,</div><div class="line">    // headers: &#123;</div><div class="line">    //     &apos;id&apos;: userid,</div><div class="line">    //     &apos;timestamp&apos;: timestamp,</div><div class="line">    //     &apos;signature&apos;: $.md5(timestamp + secret + userid)</div><div class="line">    // &#125;,</div><div class="line">    beforeSend: function(request) &#123;</div><div class="line">        var userid = 3,</div><div class="line">            timestamp = Date.parse(new Date())/1000,</div><div class="line">            secret = &apos;8fa4c58fe00d6a74&apos;;</div><div class="line">        request.setRequestHeader(&quot;id&quot;, &quot;3&quot;);</div><div class="line">        request.setRequestHeader(&quot;timestamp&quot;, timestamp);</div><div class="line">        request.setRequestHeader(&quot;signature&quot;, $.md5(timestamp + secret + userid));</div><div class="line">    &#125;,</div><div class="line">    success: function(data) &#123;</div><div class="line">    &#125;,</div><div class="line">    error: function(a, b, c) &#123;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>服务器端设置：<br><img src="../image/php1.png" alt="设置"><br>结果：<br><img src="../image/php2.png" alt="结果"></p>
+<p>服务器端设置：<br><img src="../image/php2.png" alt="pic2"><br>结果：<br><img src="../image/php3.png" alt="pic3"></p>
 
       
     </div>

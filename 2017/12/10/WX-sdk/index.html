@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="SandPgirl">
 <meta property="og:description" content="wx-录音功能步骤说明： 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号] 引入JS文件 通过config接口注入权限验证配置 通过ready接口处理成功验证 通过error接口处理失败验证">
 <meta property="og:locale" content="English and Chinese">
-<meta property="og:image" content="http://note.youdao.com/favicon.ico">
-<meta property="og:updated_time" content="2017-12-10T09:19:08.863Z">
+<meta property="og:image" content="http://shenxq.com/2017/12/10/image/sdk.png">
+<meta property="og:updated_time" content="2017-12-10T12:24:34.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WX sdk">
 <meta name="twitter:description" content="wx-录音功能步骤说明： 先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。[需要有微信公众号] 引入JS文件 通过config接口注入权限验证配置 通过ready接口处理成功验证 通过error接口处理失败验证">
-<meta name="twitter:image" content="http://note.youdao.com/favicon.ico">
+<meta name="twitter:image" content="http://shenxq.com/2017/12/10/image/sdk.png">
   
     <link rel="alternate" href="/atom.xml" title="SandPgirl" type="application/atom+xml">
   
@@ -219,7 +219,7 @@
 <li>据说会有多余的80端口问题，但是记录者没有遇到过，总之请小心。</li>
 <li>url在JavaScript中千万别忘记“encodeURIComponent”！否则后果很诡异，遇到过初始化的时候报invalid signature，但是API接口又能调用的情况。</li>
 </ol>
-<p>2、问题二：permission denied<br><br>原因：<br><br>（1）代码没有放在服务器上；<br><br>（2）见下图<br><img src="http://note.youdao.com/favicon.ico" alt="image"><br>3、问题三（页面优化）：</p>
+<p>2、问题二：permission denied<br><br>原因：<br><br>（1）代码没有放在服务器上；<br><br>（2）见下图<br><img src="../image/sdk.png" alt="wx-sdk"><br>3、问题三（页面优化）：</p>
 <blockquote>
 <p>在第一次按住录音后，由于用户未曾允许录音，微信会提示用户授权允许在本页面使用微信录音功能，这时用户会放开录音按钮转而去点击允许，在用户允许后，才真正会开始录音，而此时用户早已放开录音按钮，那么录音按钮上便不会再有touchend事件，录音便会一直进行。</p>
 </blockquote>
