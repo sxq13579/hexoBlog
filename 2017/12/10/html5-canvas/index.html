@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="SandPgirl">
 <meta property="og:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
 <meta property="og:locale" content="English and Chinese">
-<meta property="og:updated_time" content="2017-12-10T09:03:34.041Z">
+<meta property="og:updated_time" content="2017-12-11T06:46:55.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5 canvas">
 <meta name="twitter:description" content="湖北微信遥控器：1、问题一： canvas画图时，由于不同系统手机dpr不同，而canvas在定义时的width和height（不是style中的宽高）内部的像素值不会随着dpr的改变而改变，所以在dpr变大时会出现失真；另外，在遥控器绘图过程中线条粗细也会随之变化；">
@@ -197,7 +197,7 @@
 <blockquote>
 <p>具体解释：<br><a href="http://www.cnblogs.com/wmhuang/p/6477223.html" target="_blank" rel="external">http://www.cnblogs.com/wmhuang/p/6477223.html</a><br></p>
 </blockquote>
-<p>解决方法：<br><br>（1）写js时，根据dpr动态设置canvas的宽高，并改变内部图形的大小倍数；<br><br>（2）直接将canvas的狂傲设置为style中宽高的dpr倍，将内部图形也设置成相应倍数。<br></p>
+<p>解决方法：<br><br>（1）写js时，根据dpr动态设置canvas的宽高，并改变内部图形的大小倍数；<br><br>（2）直接将canvas的宽高设置为style中宽高的dpr倍，将内部图形也设置成相应倍数。<br></p>
 <h6 id="2、问题二："><a href="#2、问题二：" class="headerlink" title="2、问题二："></a>2、问题二：</h6><blockquote>
 <p>在vue编写遥控器页面绘图时，由于我首先显示的是按键页面，导致页面显示canvas绘图时，canvas不能正常显示个刷新；</p>
 <p>原因：<br>刚开始canvas不显示从而不能初始化canvas属性</p>
@@ -212,15 +212,15 @@
 <li>我们在操作之前调用canvas.save()来保存画布当前的状态，当操作之后取出之前保存过的状态，这样就不会对其他的元素进行影响<br></li>
 </ul>
 <p>代码段1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.save();   </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.restore();   </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;</div><div class="line">  Canvas canvas = sfh.lockCanvas();</div><div class="line">  canvas.drawColor(Color.BLACK);</div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);</div><div class="line">  canvas.save();</div><div class="line">  canvas.scale(5f, 5f);</div><div class="line">  canvas.restore();</div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);</div><div class="line">  sfh.unlockCanvasAndPost(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>代码段2：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">  Canvas canvas = sfh.lockCanvas();    </div><div class="line">  canvas.drawColor(Color.BLACK);  </div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">  canvas.scale(5f, 5f);  </div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">  sfh.unlockCanvasAndPost(canvas);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面这两个代码片段中我们都假设有两张图片bmp1和bmp2，并且都画在画布上!<br><br>那么代码段1和代码段2的不同:!<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;</div><div class="line">  Canvas canvas = sfh.lockCanvas();</div><div class="line">  canvas.drawColor(Color.BLACK);</div><div class="line">  canvas.drawBitmap(bmp1, 0,0,paint);</div><div class="line">  canvas.scale(5f, 5f);</div><div class="line">  canvas.drawBitmap(bmp2, 0,0,paint);</div><div class="line">  sfh.unlockCanvasAndPost(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面这两个代码片段中我们都假设有两张图片bmp1和bmp2，并且都画在画布上!<br><br>那么代码段1和代码段2的不同:<br></p>
 <ol>
 <li>代码段1中我们进行画布缩放的之前保存了画布状态，做了缩放操作之后又取出之前保存的状态，这样做是为了保证bmp2正常画出来不受到缩放的影响！</li>
-<li>代码段2里，画了bmp1后就执行了缩放操作，并且没有保存状态！紧接着画了bmp2，那么bmp2也会一样受到缩放的影响！！<br>所以我们如果单独处理一张图片的时候，而且不想影响其他部分的绘制，那么应该如下来做：!<br></li>
+<li>代码段2里，画了bmp1后就执行了缩放操作，并且没有保存状态！紧接着画了bmp2，那么bmp2也会一样受到缩放的影响<br>所以我们如果单独处理一张图片的时候，而且不想影响其他部分的绘制，那么应该如下来做：<br></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;   </div><div class="line">    Canvas canvas = sfh.lockCanvas();    </div><div class="line">    canvas.drawColor(Color.BLACK);  </div><div class="line">    canvas.drawBitmap(bmp1, 0,0,paint);  </div><div class="line">    canvas.save();   </div><div class="line">    canvas.scale(5f, 5f);  </div><div class="line">    canvas.drawBitmap(bmp2, 0,0,paint);  </div><div class="line">    canvas.restore();   </div><div class="line">    sfh.unlockCanvasAndPost(canvas);    </div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void draw() &#123;</div><div class="line">    Canvas canvas = sfh.lockCanvas();</div><div class="line">    canvas.drawColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bmp1,0,0,paint);</div><div class="line">    canvas.save();</div><div class="line">    canvas.scale(5f, 5f);</div><div class="line">    canvas.drawBitmap(bmp2, 0,0,paint);</div><div class="line">    canvas.restore();</div><div class="line">    sfh.unlockCanvasAndPost(canvas);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 
       
     </div>
